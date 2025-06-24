@@ -1,0 +1,78 @@
+{
+  "name": "WorkoutPlan",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Nome do plano de treino"
+    },
+    "student_id": {
+      "type": "string",
+      "description": "ID do aluno"
+    },
+    "trainer_id": {
+      "type": "string",
+      "description": "ID do personal trainer"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descrição do plano"
+    },
+    "duration_weeks": {
+      "type": "number",
+      "description": "Duração em semanas"
+    },
+    "exercises": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "muscle_group": {
+            "type": "string"
+          },
+          "sets": {
+            "type": "number"
+          },
+          "reps": {
+            "type": "string"
+          },
+          "rest_time": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "video_url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "completed",
+        "paused"
+      ],
+      "default": "draft"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "title",
+    "student_id",
+    "trainer_id"
+  ]
+}

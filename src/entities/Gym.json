@@ -1,0 +1,113 @@
+{
+  "name": "Gym",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome da academia"
+    },
+    "address": {
+      "type": "string",
+      "description": "Endereço completo"
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        }
+      }
+    },
+    "phone": {
+      "type": "string",
+      "description": "Telefone da academia"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email da academia"
+    },
+    "website": {
+      "type": "string",
+      "description": "Site da academia"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "URLs das fotos da academia"
+    },
+    "amenities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Comodidades disponíveis"
+    },
+    "operating_hours": {
+      "type": "object",
+      "properties": {
+        "monday": {
+          "type": "string"
+        },
+        "tuesday": {
+          "type": "string"
+        },
+        "wednesday": {
+          "type": "string"
+        },
+        "thursday": {
+          "type": "string"
+        },
+        "friday": {
+          "type": "string"
+        },
+        "saturday": {
+          "type": "string"
+        },
+        "sunday": {
+          "type": "string"
+        }
+      }
+    },
+    "membership_plans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "duration": {
+            "type": "string"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "rating": {
+      "type": "number",
+      "default": 0
+    },
+    "total_reviews": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "name",
+    "address",
+    "location"
+  ]
+}
