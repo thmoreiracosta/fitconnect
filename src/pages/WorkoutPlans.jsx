@@ -2,20 +2,14 @@ import React, { useState, useEffect } from "react";
 import ProgressChart from "@/components/workout/ProgressChart";
 import WorkoutCalendar from "@/components/workout/WorkoutCalendar";
 
-import { User } from "@/entities/User";
-import { WorkoutPlan } from "@/entities/WorkoutPlan";
+import User from "@/entities/User";
+import WorkoutPlan from "@/entities/WorkoutPlan";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/Badge";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import Button from "@/components/ui/button";
+import Badge from "@/components/ui/Badge";
+
+import Tabs from "@/components/ui/Tabs";
+import Dialog from "@/components/ui/Dialog";
 import {
   Dumbbell,
   Calendar,

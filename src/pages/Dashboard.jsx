@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { User } from "@/entities/User";
-import { WorkoutPlan } from "@/entities/WorkoutPlan";
-import { Message } from "@/entities/Message";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import User from "@/entities/User";
+import WorkoutPlan from "@/entities/WorkoutPlan";
+import Message from "@/entities/Message";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
+import Button from "@/components/ui/Button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
+import Badge from "@/components/ui/Badge";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import {

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { User } from "@/entities/User";
+import User from "@/entities/User";
 import { createPageUrl } from "@/utils";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Button from "@/components/ui/Button";
+import Input from "@/components/ui/Input";
+import Label from "@/components/ui/Label";
+import Textarea from "@/components/ui/Textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Dumbbell, Award, Briefcase, DollarSign, Calendar, CheckCircle } from "lucide-react";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import Alert from "@/components/ui/Alert";
 
 export default function RegisterTrainer() {
   const navigate = useNavigate();

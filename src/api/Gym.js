@@ -1,27 +1,29 @@
-// JavaScript Example: Reading Entities
-// Filterable fields: name, address, location, phone, email, website, images, amenities, operating_hours, membership_plans, rating, total_reviews
-async function fetchGymEntities() {
-  const response = await fetch(`https://app.base44.com/api/apps/685a9b935e6afc09158ab5c6/entities/Gym`, {
-      headers: {
-          'api_key': '59dae4b7cc784e13ab7ae95cec0c0236', // or use await User.me() to get the API key
-          'Content-Type': 'application/json'
-      }
-  });
-  const data = await response.json();
-  console.log(data);
-}
+const BASE_URL = "https://app.base44.com/api/apps/685a9b935e6afc09158ab5c6/entities/Gym";
+const API_KEY = "59dae4b7cc784e13ab7ae95cec0c0236";
 
-// JavaScript Example: Updating an Entity
-// Filterable fields: name, address, location, phone, email, website, images, amenities, operating_hours, membership_plans, rating, total_reviews
-async function updateGymEntity(entityId, updateData) {
-  const response = await fetch(`https://app.base44.com/api/apps/685a9b935e6afc09158ab5c6/entities/Gym/${entityId}`, {
-      method: 'PUT',
+const Gym = {
+  async list(params = {}) {
+    const query = new URLSearchParams(params).toString();
+    const res = await fetch(`${BASE_URL}?${query}`, {
       headers: {
-          'api_key': '59dae4b7cc784e13ab7ae95cec0c0236', // or use await User.me() to get the API key
-          'Content-Type': 'application/json'
+        "api_key": API_KEY,
+        "Content-Type": "application/json",
+      }
+    });
+    if (!res.ok) throw new Error("Erro ao listar academias");
+    return await res.json();
+  },
+  async update(id, data) {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      method: "PUT",
+      headers: {
+        "api_key": API_KEY,
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(updateData)
-  });
-  const data = await response.json();
-  console.log(data);
-}
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) throw new Error("Erro ao atualizar academia");
+    return await res.json();
+  },
+};
+export default Gym;
